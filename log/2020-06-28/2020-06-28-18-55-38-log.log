@@ -1,0 +1,4 @@
+Sun 28 Jun 2020 18:55:38 DEBUG log.py 67 2828 test log debug !!!!
+Sun 28 Jun 2020 18:55:38 INFO log.py 68 2828 test log info !!!!
+Sun 28 Jun 2020 18:55:38 WARNING log.py 69 2828 test log warn !!!!
+Sun 28 Jun 2020 18:55:38 ERROR log.py 70 2828 test log error !!!!
