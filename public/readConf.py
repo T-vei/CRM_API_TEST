@@ -5,7 +5,7 @@ from configparser import ConfigParser
 
 #项目的文件目录地址，支持不同操作系统
 BASE_PATH = os.path.split(os.path.dirname(os.path.abspath(__file__)))[0]
-CONFIG_FILE = os.path.join(BASE_PATH, 'config', 'config.conf')
+CONFIG_FILE = os.path.join(BASE_PATH, 'conf', 'config.conf')
 DATA_PATH = os.path.join(BASE_PATH, 'data')
 PUBLIC_PATH = os.path.join(BASE_PATH, 'public')
 LOG_PATH = os.path.join(BASE_PATH, 'log')
@@ -25,25 +25,21 @@ print(REPORT_PATH)
 print(os.getcwd())
 '''
 #读取conf配置
-class config:
-    def get(self,section,option):
+class config():
+    def __init__(self,config_file):
         self.conf = ConfigParser()
-        self.conf.read(config_dir, encoding="UTF-8")
+        self.conf.read(config_file, encoding="UTF-8")
+
+    def get(self,section,option):
         return self.conf.get(section,option)
+    def sections(self):
+        return self.conf.sections()
 
-
-#host = conf.get("section1","host1")
-#tmlUser = conf.get("section3","tmlUser")
-#tmlPwd = conf.get("section3","tmlPwd")
-#print(host,tmlUser,tmlPwd)
-
-conf1 = ConfigParser()
-conf1.read('D:\ProgramData\mySpace\CRM_API_TEST\config\config.conf', encoding="UTF-8")
-print(conf1.sections())
 
 
 if __name__== '__main__':
-    s =config()
+    s =config(CONFIG_FILE)
     print(s.get('section1','host1'))
+    print(s.sections())
 
 

@@ -6,7 +6,9 @@ from CRM_API_TEST.public.readConf import config
 from CRM_API_TEST.public.readConf import LOG_PATH,REPORT_PATH
 from CRM_API_TEST.public.log import LOG
 from CRM_API_TEST.public.HTMLTestRunner_PY3 import HTMLTestRunner
+from ddt import ddt,data,data_file,unpack
 
+@ddt
 class app_QuickUserLogin(unittest.TestCase):
     def setUp(self):
         cf = config()
@@ -16,7 +18,7 @@ class app_QuickUserLogin(unittest.TestCase):
         self.tmlPwd = cf.get("section3","tmlPwd")
         #print(self.host,self.tmlUser)
 
-
+    @data()
     def test_appQuickUserLogin(self):
         url = "/bss/app/noauth/QuickUserLogin"
         #print(host + url)
