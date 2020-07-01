@@ -1,44 +1,46 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import os
 import unittest,requests
 from CRM_API_TEST.public.readConf import config
-from CRM_API_TEST.public.readConf import LOG_PATH,REPORT_PATH
+from CRM_API_TEST.public.readConf import LOG_PATH,REPORT_PATH,CONFIG_FILE
 from CRM_API_TEST.public.log import LOG
 from CRM_API_TEST.public.HTMLTestRunner_PY3 import HTMLTestRunner
-from ddt import ddt,data,data_file,unpack
+from ddt import ddt,data,file_data,unpack
 
 @ddt
 class app_QuickUserLogin(unittest.TestCase):
+    cf = config(CONFIG_FILE)
+    # global host,tmlUser,tmlPwd
+    host = cf.get("host", "host1")
+    tmlUser = cf.get("tmlUser", "tmlUser1")
+    tmlPwd = cf.get("tmlUser", "tmlPwd1")
     def setUp(self):
-        cf = config()
-        #global host,tmlUser,tmlPwd
-        self.host = cf.get("section1","host1")
-        self.tmlUser = cf.get("section3","tmlUser")
-        self.tmlPwd = cf.get("section3","tmlPwd")
+        pass
         #print(self.host,self.tmlUser)
 
-    @data()
-    def test_appQuickUserLogin(self):
-        url = "/bss/app/noauth/QuickUserLogin"
-        #print(host + url)
-        headers = {'Content-Type':'application/json'}
-        data = {
+    @data(
+        ({
 
                 "streamNo": "GLCAM20206273161019000001",
                 "clientId": "id123456",
                 "clientSecret": "id123456",
-                "userCode": self.tmlUser,
+                "userCode": tmlUser,
                 "loginType": "PWD",
                 "enterpriseCode": "EA00010066",
-                "password": self.tmlPwd,
+                "password": tmlPwd,
                 "channelType": "APP"
 
-        }
+        },"00000000"))
+    @unpack
+    def test_appQuickUserLogin(self,data,code):
+        url = "/bss/app/noauth/QuickUserLogin"
+        #print(host + url)
+        headers = {'Content-Type':'application/json'}
         r = requests.post(self.host + url,headers=headers,json=data)
         print(r.status_code)
         print(r.json()['resultCode'])
-        self.assertEqual(r.json()['resultCode'],'00000000')
+        print(r.content)
+        self.assertEqual(r.json()['resultCode'],code)
         LOG.logger.info(self.__class__.__name__)
         LOG.logger.info(r.content)
 
