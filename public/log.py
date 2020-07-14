@@ -62,9 +62,11 @@ class logger(object):
         return logger.log
 
 LOG = logger.logit()
-
+'''
 if __name__=='__main__':
     LOG.logger.debug('test log debug !!!!')
     LOG.logger.info('test log info !!!!')
     LOG.logger.warning('test log warn !!!!')
     LOG.logger.error('test log error !!!!')
+    
+'''

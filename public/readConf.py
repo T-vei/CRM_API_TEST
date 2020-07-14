@@ -7,6 +7,7 @@ from configparser import ConfigParser
 BASE_PATH = os.path.split(os.path.dirname(os.path.abspath(__file__)))[0]
 CONFIG_FILE = os.path.join(BASE_PATH, 'conf', 'config.conf')
 DATA_PATH = os.path.join(BASE_PATH, 'data')
+API_DATA_PATH = os.path.join(BASE_PATH, 'data','api_url.conf')
 PUBLIC_PATH = os.path.join(BASE_PATH, 'public')
 LOG_PATH = os.path.join(BASE_PATH, 'log')
 REPORT_PATH = os.path.join(BASE_PATH, 'report')
@@ -35,11 +36,10 @@ class config():
     def sections(self):
         return self.conf.sections()
 
-
-
+'''
 if __name__== '__main__':
     s =config(CONFIG_FILE)
     print(s.get('section1','host1'))
     print(s.sections())
 
-
+'''
