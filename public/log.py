@@ -11,9 +11,7 @@ class mylog(object):
         #create log dir
         if not os.path.exists(LOG_PATH):
             os.mkdir(LogPath)
-
         logPath = os.path.join(LOG_PATH,str(datetime.now().strftime("%Y-%m-%d")))
-
         if not os.path.exists(logPath):
             os.mkdir(logPath)
 
@@ -51,7 +49,6 @@ logger.critical('critical message')
 class logger(object):
     log = None
     mutex = threading.Lock()
-
     @staticmethod
     def logit():
         if logger.log is None:

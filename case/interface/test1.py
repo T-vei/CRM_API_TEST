@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import unittest,requests
+import unittest,requests,os
 from CRM_API_TEST.public.readConf import config
 from CRM_API_TEST.public.readConf import LOG_PATH,REPORT_PATH,CONFIG_FILE
 from CRM_API_TEST.public.log import LOG
@@ -19,9 +19,11 @@ class aaa(unittest.TestCase):
         print(data)
 
 
+print(os.path.abspath(__file__))
 
 
-
-
+'''
 if __name__ =="__main__":
     unittest.main()
+
+'''
