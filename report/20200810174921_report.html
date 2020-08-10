@@ -200,9 +200,9 @@
         
     <div class='page-header'>
         <h1>saas 接口自动化测试</h1>
-    <p class='attribute'><strong>开始时间:</strong> 2020-08-10 18:46:50</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:00.386859</p>
-<p class='attribute'><strong>状态:</strong> 通过 1</p>
+    <p class='attribute'><strong>开始时间:</strong> 2020-08-10 17:49:21</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:00.595401</p>
+<p class='attribute'><strong>状态:</strong> 通过 2</p>
 
     </div>
     <div style="float: left;width:50%;"><p class='description'>测试报告</p></div>
@@ -234,26 +234,29 @@
         </tr>
         
     <tr class='passClass'>
-        <td>app_QueryUserOfferList</td>
-        <td>1</td>
-        <td>1</td>
+        <td>app_QueryUserInfo</td>
+        <td>2</td>
+        <td>2</td>
         <td>0</td>
         <td>0</td>
-        <td><a href="javascript:showClassDetail('c1',1)">详情</a></td>
+        <td><a href="javascript:showClassDetail('c1',2)">详情</a></td>
     </tr>
 
 <tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_app_QueryUserOfferList</div></td>
+    <td class='none'><div class='testcase'>test_app_QueryUserInfo_0: 查询用户信息</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_app_QueryUserInfo_1: 查询流量包优先开关标识</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
         通过</a>
 
-    <div id='div_pt1.1' class="popup_window">
-        <pre>pt1.1: 5ef70c6acd2ceb1a6f82f9fd
-TGT-1059-GNvu7acwW6mY6xNSCAaD7KRhFzRleRX77LU7K35wh21LK2dZ3S
-{'streamNo': 'GLCAM20151113161019000001', 'resultCode': '00000000', 'resultDesc': '成功', 'data': {'perPageCount': 10, 'currentPage': 1, 'totalCount': 0, 'totalPageCount': 0, 'dataList': []}}
+    <div id='div_pt1.2' class="popup_window">
+        <pre>pt1.2: {'streamNo': 'UKAPP20151113161019000001', 'resultCode': '00000000', 'resultDesc': 'Operation successful.', 'data': {'userCode': 'tmluser0001@apitest.com', 'phone': '', 'email': 'tmluser0001@apitest.com', 'nickname': 'tmluser0001@apitest.com', 'firstname': '1', 'lastname': '1', 'countryCode': '', 'identification': '', 'identificationType': 'PASSPORT', 'gender': None, 'countryName': None, 'province': None, 'city': None, 'area': None, 'street': None, 'address': None, 'zipCode': None, 'company': None, 'registerType': 'EMAIL', 'basePayFlag': True, 'orgCode': 'APITEST01ORG', 'orgName': 'API测试专用一', 'orgId': '5cdb72434d9b23669f38c82d', 'mvnoCode': 'APITEST01', 'mvnoName': 'APITEST01', 'mvnoId': '5cdb72434d9b233c1a515536', 'customerId': '5ef70c6acd2ceb1a6f82f9fd', 'enterpriseRemark': 'ENTERPRISE_REGISTER', 'registerCountry': 'CN', 'enterpriseRemarkTime': 1593248874267, 'cutoverTime': None, 'isBindPhone': False, 'groupDiscFlag': 'OFF', 'pkgFirstFlag': True}}
 </pre>
     </div>
     <!--css div popup end-->
@@ -263,8 +266,8 @@ TGT-1059-GNvu7acwW6mY6xNSCAaD7KRhFzRleRX77LU7K35wh21LK2dZ3S
 
         <tr id='total_row'>
             <td>总计</td>
-            <td>1</td>
-            <td>1</td>
+            <td>2</td>
+            <td>2</td>
             <td>0</td>
             <td>0</td>
             <td>&nbsp;</td>
@@ -300,7 +303,7 @@ TGT-1059-GNvu7acwW6mY6xNSCAaD7KRhFzRleRX77LU7K35wh21LK2dZ3S
                     radius : '60%',
                     center: ['50%', '60%'],
                     data:[
-                        {value:1, name:'通过'},
+                        {value:2, name:'通过'},
                         {value:0, name:'失败'},
                         {value:0, name:'错误'}
                     ],

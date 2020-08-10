@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import unittest,requests,os
+import unittest,requests,os,sys
 from CRM_API_TEST.public.readConf import config
 from CRM_API_TEST.public.readConf import LOG_PATH,REPORT_PATH,CONFIG_FILE
 from CRM_API_TEST.public.log import LOG
 from CRM_API_TEST.public.HTMLTestRunner_PY3 import HTMLTestRunner
 from ddt import ddt,data,file_data,unpack
-
+from CRM_API_TEST.public.common import *
+'''
 @ddt
 class aaa(unittest.TestCase):
     s = '9'
@@ -18,9 +19,10 @@ class aaa(unittest.TestCase):
     def test_aasasa(self,data):
         print(data)
 
-
-print(os.path.abspath(__file__))
-
+'''
+report_path = REPORT_PATH + '\\' + get_ftime() + '_report.html'
+with open(report_path,'wb') as f:
+    print('123456')
 
 '''
 if __name__ =="__main__":
